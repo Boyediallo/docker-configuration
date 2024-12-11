@@ -90,16 +90,16 @@ server {
 ### Construction de l'image
 ```bash
 # Construire l'image
-docker build -t mon-app-react .
+docker build -t mon-app-react . ou docker build . -t mon-app-react ## C'est la même chose
 
 # Lancer le conteneur
-docker run -p 8080:80 mon-app-react
+docker run -p 3000:80 mon-app-react ## -p 8080:80 est le port de l'hôte et le port du conteneur
 ```
 
 ### Gestion des conteneurs
 ```bash
 # Voir les conteneurs en cours d'exécution
-docker ps
+docker ps ## -a pour voir tous les conteneurs
 
 # Arrêter un conteneur
 docker stop <container_id>
@@ -119,7 +119,7 @@ docker exec -it <container_id> /bin/sh
 
 ## 5. Notes importantes
 
-- L'application sera accessible sur `http://localhost:8080` après le démarrage
+- L'application sera accessible sur `http://localhost:3000` après le démarrage
 - Les variables d'environnement dans `.env.dev` doivent être configurées avant le build
 - Le build utilise une approche multi-stage pour réduire la taille de l'image finale
 - La configuration Nginx est optimisée pour une Single Page Application (SPA) React
