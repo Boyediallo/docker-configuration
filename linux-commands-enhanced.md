@@ -183,8 +183,6 @@ mdadm --manage /dev/md0 --add /dev/sdb
 
 *Documentation générée le 27 novembre 2024*
 
-*Documentation mis a jour le 24 janvier 2025*
-
 ```bash
 # Pour deployer une nouvelle version de votre application Java après des développements, vous pouvez ajouter ces commandes dans un script de déploiement :
 
@@ -216,4 +214,4 @@ ssh username@46.105.139.186 ou username@IP
 # De suite entrer le password
 
 ```
-
+*Documentation mis a jour le 24 janvier 2025*
