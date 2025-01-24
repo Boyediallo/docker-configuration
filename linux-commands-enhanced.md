@@ -183,8 +183,6 @@ mdadm --manage /dev/md0 --add /dev/sdb
 
 *Documentation générée le 27 novembre 2024*
 
-*Documentation mis a jour le 24 janvier 2025*
-
 ```bash
 # Pour deployer une nouvelle version de votre application Java après des développements, vous pouvez ajouter ces commandes dans un script de déploiement :
 
@@ -195,12 +193,19 @@ pkill -f mpo-0.0.1-SNAPSHOT.jar
 cp mpo-0.0.1-SNAPSHOT.jar backup/mpo-0.0.1-SNAPSHOT_$(date +"%Y%m%d_%H%M%S").jar
 
 # Déployer la nouvelle version
+$PATH
+JAVA_HOME=/opt/jdk-21.0.5
+PATH=$JAVA_HOME/bin:$PATH
+$PATH
 java -jar mpo-0.0.1-SNAPSHOT.jar > logOutput.log 2>&1 &
+cat logOutput.log 
 
 # Pour le déploiement du front, ajoutez à votre guide cette section
 
 # Déploiement Front
-cp -r build/* /var/www/html/
+mkdir /var/www/mpo-web
+cp -r build/* /var/www/mpo-web/build/
+ls -il /var/www/mpo-web/build
 sudo systemctl reload nginx
 
 # Pour se connecter au SERVER DEV CASI par FileZilla
@@ -213,7 +218,10 @@ SERVER DEV CASI
 # Pour se connecter au SERVER DEV CASI par un terminal
 
 ssh username@46.105.139.186 ou username@IP
+# Dans mon cas 
+ssh root@46.105.139.186
 # De suite entrer le password
+Saidou
 
 ```
-
+*Documentation mis a jour le 01 mars 2025*
