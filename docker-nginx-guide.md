@@ -93,13 +93,13 @@ server {
 docker build -t mon-app-react . ou docker build . -t mon-app-react ## C'est la même chose
 
 # Lancer le conteneur
-docker run -p 3000:80 mon-app-react ## -p 8080:80 est le port de l'hôte et le port du conteneur
+docker run -p 3000:80 mon-app-react # -p 8080:80 est le port de l'hôte et le port du conteneur
 ```
 
 ### Gestion des conteneurs
 ```bash
 # Voir les conteneurs en cours d'exécution
-docker ps ## -a pour voir tous les conteneurs
+docker ps # pour voir tous les conteneurs
 
 # Arrêter un conteneur
 docker stop <container_id>
@@ -112,7 +112,7 @@ docker rm <container_id>
 ```bash
 # Voir les logs du conteneur
 docker logs <container_id>
-
+ 
 # Entrer dans le conteneur
 docker exec -it <container_id> /bin/sh
 ```

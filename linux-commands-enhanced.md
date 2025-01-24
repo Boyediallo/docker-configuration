@@ -84,6 +84,8 @@ systemctl status ssh
 sudo apt install nginx -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
+# Installation et démarrage Nginx
+# dans le front je copie juste le contenue du dochier build et apres je tape la commande sudo systemctl reload nginx
 ```
 
 ---
@@ -174,7 +176,44 @@ mdadm --manage /dev/md0 --add /dev/sdb
 >
 > 💡 **Backup**: Créez des snapshots avant les mises à jour majeures
 
+
+
+
 ---
 
 *Documentation générée le 27 novembre 2024*
+
+*Documentation mis a jour le 24 janvier 2025*
+
+```bash
+# Pour deployer une nouvelle version de votre application Java après des développements, vous pouvez ajouter ces commandes dans un script de déploiement :
+
+# Stopper l'application en cours
+pkill -f mpo-0.0.1-SNAPSHOT.jar
+
+# Backup de l'ancienne version (optionnel mais recommandé)
+cp mpo-0.0.1-SNAPSHOT.jar backup/mpo-0.0.1-SNAPSHOT_$(date +"%Y%m%d_%H%M%S").jar
+
+# Déployer la nouvelle version
+java -jar mpo-0.0.1-SNAPSHOT.jar > logOutput.log 2>&1 &
+
+# Pour le déploiement du front, ajoutez à votre guide cette section
+
+# Déploiement Front
+cp -r build/* /var/www/html/
+sudo systemctl reload nginx
+
+# Pour se connecter au SERVER DEV CASI par FileZilla
+
+SERVER DEV CASI
+	IP : 46.105.139.186
+	user/pwd : root / Saidou
+    Port: 22
+
+# Pour se connecter au SERVER DEV CASI par un terminal
+
+ssh username@46.105.139.186
+# De suite entrer le password
+
+```
 
