@@ -212,7 +212,7 @@ SERVER DEV CASI
 
 # Pour se connecter au SERVER DEV CASI par un terminal
 
-ssh username@46.105.139.186
+ssh username@46.105.139.186 ou username@IP
 # De suite entrer le password
 
 ```
